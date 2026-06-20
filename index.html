@@ -3,59 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Database Project</title>
+    <title>Login</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background: #ffffff;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            padding: 20px;
         }
-        .form-box {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            width: 300px;
-        }
-        input {
+
+        .login-container {
+            background: #ffffff;
+            padding: 20px;
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
+            max-width: 380px;
+            text-align: center;
         }
-        button {
+
+        .input-group {
+            margin-bottom: 14px;
+        }
+
+        /* Username Box: Ab Password jaise color mein hai par round hai */
+        .input-user {
             width: 100%;
-            padding: 10px;
-            background-color: #28a745;
+            padding: 14px 20px;
+            border: 1px solid #dbdbdb;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            outline: none;
+            background: #f8fafc;
+            color: #262626;
+        }
+
+        /* Password Box: Normal corners ke sath */
+        .input-pass {
+            width: 100%;
+            padding: 14px 20px;
+            border: 1px solid #dbdbdb;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            outline: none;
+            background: #f8fafc;
+            color: #262626;
+        }
+
+        /* Blue Log In Button */
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background: #007fff;
             color: white;
             border: none;
-            border-radius: 4px;
-            font-weight: bold;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .login-btn:active {
+            opacity: 0.8;
+        }
+
+        .forgot-link {
+            display: block;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #00376b;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-    <div class="form-box">
-        <h2>Register Here</h2>
-        <form id="userForm">
-            <input type="text" id="username" placeholder="Enter Username" required>
-            <input type="email" id="useremail" placeholder="Enter Email" required>
-            <button type="submit">Submit Data</button>
-        </form>
+    <div class="login-container">
+        
+        <div class="input-group">
+            <input type="text" id="username" class="input-user" placeholder="Username or Email" required>
+        </div>
+        
+        <div class="input-group">
+            <input type="password" id="password" class="input-pass" placeholder="Password" required>
+        </div>
+        
+        <button class="login-btn" id="submitBtn">Log in</button>
+        
+        <a href="#" class="forgot-link">Forgotten password?</a>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-
     <script src="app.js"></script>
-
 </body>
 </html>
